@@ -1,0 +1,12 @@
+<div class="container">
+    <div *ngFor="let nave of shipList">
+        <div class="naves border border-white mx-4 " (click)="infoShip(nave.url)">
+            <p class="m-3 text-uppercase fw-bold">{{nave.name}}</p>
+            <p class="m-3 fw-bold">{{nave.model}}</p>
+        </div>
+        <hr>
+    </div>
+    <div class="d-flex justify-content-end mx-4">
+        <button class="btn btn-secondary" (click)="viewMore()">view more >></button>
+    </div>
+</div>

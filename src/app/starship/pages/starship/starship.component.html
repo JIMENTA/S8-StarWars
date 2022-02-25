@@ -1,0 +1,24 @@
+<div class=" nave container my-4">
+    <div class="row">
+        <img [src]="pic" onerror="this.src='assets/not_found.jpg'" [alt]="oneShip.name" class="img-fluid d-block my-4 ">
+
+        <h1 class="text-uppercase"> {{oneShip.name}}</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae necessitatibus ad, natus totam quasi provident placeat inventore deserunt facere dolore eius eum, quibusdam a esse pariatur nulla explicabo blanditiis repellendus!</p>
+
+        <div class="col-8 col-md-6">
+            <ul>
+                <li><strong>Model: </strong>{{oneShip.model}}</li>
+                <li><strong>Cost in credits: </strong>{{ oneShip.cost_in_credits}}</li>
+                <li><strong>Atmospheric Speed: </strong> {{ oneShip.max_atmosphering_speed}}</li>
+            </ul>
+        </div>
+        <div class="col-8 col-md-6">
+            <ul>
+                <li><strong>Manufacturer: </strong> {{oneShip.manufacturer}}</li>
+                <li><strong>Length: </strong>{{oneShip.length}}</li>
+                <li><strong>Crew: </strong>{{oneShip.crew}}</li>
+            </ul>
+        </div>
+    </div>
+    <button class="btn btn-dark" (click)="goBack()"> << Go Back</button>
+</div>
