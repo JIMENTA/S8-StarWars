@@ -10,8 +10,8 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
   repeatedPassword: string;
-  showSignIn : boolean = false;
-  showRegister: boolean = false;
+  showSignIn : boolean;
+  showRegister: boolean;
   
 
   constructor(private router: Router){}

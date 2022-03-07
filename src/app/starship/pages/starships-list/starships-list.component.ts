@@ -22,6 +22,7 @@ export class StarshipsListComponent implements OnInit{
   public shipList: Nave[]= [];
   public page : number = 0;
   public id: number;
+  public keepShowing: boolean = true;
 
   constructor (private starshipService : StarshipService, private router: Router, private route: ActivatedRoute) { 
     
@@ -29,7 +30,6 @@ export class StarshipsListComponent implements OnInit{
 
   ngOnInit() {
   this.viewMore()
-
   }
 
   infoShip(url: string){
@@ -39,12 +39,15 @@ export class StarshipsListComponent implements OnInit{
 
   
   viewMore(){
-    this.page++
+   this.page ++
     let pag = this.page.toString()
     this.starshipService.listShips(pag).subscribe(list =>{
       this.shipList = this.shipList.concat(list.results);
-      console.log(this.shipList);
+      console.log(this.page);
     })
+    if(this.page >=4){
+      this.keepShowing = !this.keepShowing
+    }
   }
 
 

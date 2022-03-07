@@ -16,11 +16,6 @@ export class StarshipService {
 
   constructor( private http : HttpClient) { }
 
-  listShips(pag?:string): Observable<ListOfStarships>{
-    let list =`${this.pageUrl}${pag}`
-    return this.http.get<ListOfStarships>(list)
-  }
-
   getAllShips(): Observable<Nave[]>{
      return this.http.get<ListOfStarships>(`${this.apiUrl}`)
      .pipe(
@@ -51,15 +46,15 @@ export class StarshipService {
   }
 
 
-  getShipById(id: string): Observable<any>{
-   return this.http.get<any>(`${this.apiUrl}/${id}`);
+  getShipById(id: string): Observable<Nave>{
+   return this.http.get<Nave>(`${this.apiUrl}/${id}`);
    
   }
 
-  getMoreShips(): Observable<ListOfStarships>{
-    if(this.page < 4) this.page ++
-    console.log(`${this.pageUrl}${this.page}`)
-    return this.http.get<ListOfStarships>(`${this.pageUrl}${this.page}`)
+  listShips(pag?:string): Observable<ListOfStarships>{
+    let list =`${this.pageUrl}${pag}`
+    return this.http.get<ListOfStarships>(list)
   }
+
 
 }
