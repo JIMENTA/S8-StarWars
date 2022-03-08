@@ -2,22 +2,25 @@
     <div class="text-center">
         <div class="card-head">
             <p><b> WELCOME </b></p>
-
         </div>
 
         <label> email</label>
-        <input class="form-control m-2" type="email" placeholder="ingresa tu correo" [(ngModel)]="email">
+        <input class="form-control m-2" type="email" placeholder="ingresa tu correo" [(ngModel)]="email" />
 
         <label> password</label>
-        <input class="form-control m-2" type="password" placeholder="password" [(ngModel)]="password">
+        <input class="form-control m-2" type="password" placeholder="password" [(ngModel)]="password" />
 
-        <button *ngIf="!showRegister" class="btn btn-warning btn-block m-2" (click)="doLogIn()">Ingresa</button>
-        <div *ngIf="showSignIn">
+        <button *ngIf="showLogIn && !showSignIn" class="btn btn-warning btn-block m-2" (click)="doLogIn()">
+                Log in
+            </button>
+
+        <div *ngIf="showSignIn && !showLogIn">
             <label> repeat password</label>
-            <input class="form-control m-2" type="password" placeholder=" repeat your password" [(ngModel)]="repeatedPassword">
+            <input class="form-control m-2" type="password" placeholder="repeat your password" [(ngModel)]="repeatedPassword" />
         </div>
-        <button class="btn btn-warning btn-block m-2" (click)=" doSignIn()" (click)="toggleSignIn()" (click)="toogleRegister()">Registrate</button>
 
-
-
+        <button *ngIf="showSignIn && !showLogIn" class="btn btn-warning btn-block m-2" (click)="doSignIn()">
+                Sign in
+            </button>
     </div>
+</div>

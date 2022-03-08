@@ -12,7 +12,6 @@ export class StarshipService {
 
   private apiUrl : string = 'https://swapi.dev/api/starships';
   private pageUrl :string = 'https://swapi.dev/api/starships/?page=';
-  private page : number = 0;
 
   constructor( private http : HttpClient) { }
 
